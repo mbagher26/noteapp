@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Note from './Note'
 import ColorBox from './ColorBox'
 import './../styles/NoteApp.css'
+import { FaPlusSquare } from "react-icons/fa";
+import { FaEraser } from "react-icons/fa";
 
 export default class NoteApp extends Component {
 
@@ -29,12 +31,14 @@ export default class NoteApp extends Component {
 
         this.inputHandler = this.inputHandler.bind(this)
         this.colorHandler = this.colorHandler.bind(this)
+        
     }
 
     inputHandler(event) {
         this.setState({
             noteTitle: event.target.value 
         })
+        console.log(this.state.noteTitle);
     }
 
     colorHandler(color) {
@@ -42,6 +46,9 @@ export default class NoteApp extends Component {
             inputColor: color
         })
     }
+
+
+    
 
     render() {
         return (
@@ -57,7 +64,7 @@ export default class NoteApp extends Component {
                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
                                         <input id="input-field" className="form-control" type="text" value={this.state.noteTitle} onChange={this.inputHandler} style={{ backgroundColor: this.state.inputColor }} placeholder="Something here..." />
                                     </div>
-                                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
+                                    <div className=" col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
                                         <div id='color-select'>
                                             {
                                                 this.state.colors.map((color) => (
@@ -67,9 +74,8 @@ export default class NoteApp extends Component {
                                         </div>
                                     </div>
                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto my-1 text-right">
-                                        <button id="btn-save" type="button" className="btn btn-outline-info"><span className="fa fa-plus" ></span></button>
-                                        <button id="btn-delete" type="button" className="btn btn-outline-danger"><span id="btn-icon"
-                                            className="fa fa-eraser"></span></button>
+                                        <button id="btn-save" type="button" className="btn btn-outline-info" ><span className="fa fa-plus" ><FaPlusSquare/></span></button>
+                                        <button id="btn-delete" type="button" className="btn btn-outline-danger" ><span id="btn-icon"className="fa fa-eraser"><FaEraser/></span></button>
                                     </div>
                                 </div>
                             </div>
