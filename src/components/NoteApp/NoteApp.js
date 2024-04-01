@@ -28,11 +28,18 @@ export default class NoteApp extends Component {
         }
 
         this.inputHandler = this.inputHandler.bind(this)
+        this.colorHandler = this.colorHandler.bind(this)
     }
 
     inputHandler(event) {
         this.setState({
             noteTitle: event.target.value 
+        })
+    }
+
+    colorHandler(color) {
+        this.setState({
+            inputColor: color
         })
     }
 
@@ -54,7 +61,7 @@ export default class NoteApp extends Component {
                                         <div id='color-select'>
                                             {
                                                 this.state.colors.map((color) => (
-                                                    <ColorBox key={color} Color={color} />
+                                                    <ColorBox key={color} Color={color} value={this.state.inputColor} onColor={this.colorHandler} />
                                                 ))
                                             }
                                         </div>
