@@ -31,7 +31,8 @@ export default class NoteApp extends Component {
 
         this.inputHandler = this.inputHandler.bind(this)
         this.colorHandler = this.colorHandler.bind(this)
-        
+        this.plusHandler = this.plusHandler.bind(this)
+        // this.deleteHandler = this.deleteHandler.bind(this)
     }
 
     inputHandler(event) {
@@ -47,8 +48,13 @@ export default class NoteApp extends Component {
         })
     }
 
+    plusHandler() {
+        this.setState({
+            notes: [...this.state.notes,this.state.noteTitle]
+        })
+    }
 
-    
+
 
     render() {
         return (
@@ -74,8 +80,8 @@ export default class NoteApp extends Component {
                                         </div>
                                     </div>
                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto my-1 text-right">
-                                        <button id="btn-save" type="button" className="btn btn-outline-info" ><span className="fa fa-plus" ><FaPlusSquare/></span></button>
-                                        <button id="btn-delete" type="button" className="btn btn-outline-danger" ><span id="btn-icon"className="fa fa-eraser"><FaEraser/></span></button>
+                                        <button id="btn-save" type="button" className="btn btn-outline-info" onClick={this.plusHandler}><span className="fa fa-plus" ><FaPlusSquare/></span></button>
+                                        <button id="btn-delete" type="button" className="btn btn-outline-danger"><span id="btn-icon"className="fa fa-eraser"><FaEraser/></span></button>
                                     </div>
                                 </div>
                             </div>
