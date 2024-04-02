@@ -57,7 +57,8 @@ export default class NoteApp extends Component {
 
     deleteHandler() {
         this.setState({
-            noteTitle: ''
+            noteTitle: '',
+            inputColor: '#fff'
         })
     }
 
