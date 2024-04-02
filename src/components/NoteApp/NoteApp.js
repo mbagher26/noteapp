@@ -33,6 +33,7 @@ export default class NoteApp extends Component {
         this.colorHandler = this.colorHandler.bind(this)
         this.plusHandler = this.plusHandler.bind(this)
         this.deleteHandler = this.deleteHandler.bind(this)
+        this.removeNote = this.removeNote.bind(this)
     }
 
     inputHandler(event) {
@@ -61,6 +62,15 @@ export default class NoteApp extends Component {
         })
     }
 
+    removeNote(noteTitle) {
+        let notes =this.state.notes
+        let newNote = notes.filter(note => {
+           return note !== noteTitle
+        })
+        this.setState({
+            notes: [newNote]
+        })
+    }
 
     render() {
         return (
@@ -100,7 +110,7 @@ export default class NoteApp extends Component {
                                             <div id='listed' className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 p-3 card-columns">
                                                 {this.state.notes.map(note => (
                                                 
-                                                <Note key={note} Note={note} Color={this.state.inputColor} />
+                                                    <Note key={note} Note={note} Color={this.state.inputColor} onRemove={this.removeNote} />
                                             ))}
 
                                             </div>
