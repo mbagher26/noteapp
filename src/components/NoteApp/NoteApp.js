@@ -40,7 +40,6 @@ export default class NoteApp extends Component {
         this.setState({
             noteTitle: event.target.value 
         })
-        console.log(this.state.noteTitle);
     }
 
     colorHandler(color) {
