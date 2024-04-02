@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 export default class Note extends Component {
 
-    removeHamdler(note) {
-        this.props.onRemove(note)
+    removeHamdler(noteId) {
+        this.props.onRemove(noteId)
     }
     render() {
-        let {color, title} = this.props
+        let {id, color, title} = this.props
         return (
-            <div className="card shadow-sm rounded" style={{ backgroundColor: color }} onClick={this.removeHamdler.bind(this, this.props.Note)}><p className="card-text p-3">{title}</p></div>
+            <div className="card shadow-sm rounded" style={{ backgroundColor: color }} onClick={this.removeHamdler.bind(this, id)}><p className="card-text p-3">{title}</p></div>
         )
     }
 }
