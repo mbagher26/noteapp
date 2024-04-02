@@ -72,13 +72,13 @@ export default class NoteApp extends Component {
         })
     }
 
-    removeNote(noteTitle) {
+    removeNote(noteId) {
         let notes =this.state.notes
         let newNote = notes.filter(note => {
-           return note !== noteTitle
+           return note.id !== noteId
         })
         this.setState({
-            notes: [newNote]
+            notes: [...newNote]
         })
     }
 
