@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './../styles/Note.css'
 
 export default class Note extends Component {
 
@@ -8,7 +9,9 @@ export default class Note extends Component {
     render() {
         let {id, color, title} = this.props
         return (
-            <div className="card shadow-sm rounded" style={{ backgroundColor: color }} onClick={this.removeHamdler.bind(this, id)}><p className="card-text p-3">{title}</p></div>
+            <div className="card shadow-sm rounded" style={{ backgroundColor: color }} onClick={this.removeHamdler.bind(this, id)}>
+                <p className="card-text p-3">{title}</p>
+            </div>
         )
     }
 }
