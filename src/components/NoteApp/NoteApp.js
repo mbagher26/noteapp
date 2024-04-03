@@ -94,7 +94,7 @@ export default class NoteApp extends Component {
                             <div className="flex row-gt-sm">
                                 <div className="flex flex-50-gt-sm">
                                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
-                                        <input id="input-field" className="form-control" type="text" value={this.state.noteTitle} onChange={this.inputHandler} style={{ backgroundColor: this.state.inputColor }} placeholder="Something here..." />
+                                        <input id="input-field" className="form-control" type="text" maxLength="40" value={this.state.noteTitle} onChange={this.inputHandler} style={{ backgroundColor: this.state.inputColor }} placeholder="Something here..." />
                                     </div>
                                     <div className=" col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
                                         <div id='color-select'>
