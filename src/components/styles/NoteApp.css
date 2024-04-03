@@ -30,3 +30,14 @@
     width: 25px;
     height: 25px;
 }
+
+#listed{
+    width: 1300px;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    margin: 20px;
+}
